@@ -1,6 +1,8 @@
 const workspace = document.querySelector('#main');
+const resetButton = document.querySelector('#reset');
 
 function createWorkSpace(n) {
+    workspace.innerHTML = ''
     for (let i = 0; i < n; i++) {
         let row_div = document.createElement('div');
         row_div.setAttribute('class', 'row-div');
@@ -13,10 +15,17 @@ function createWorkSpace(n) {
     }
 }
 
+function newGrid() {
+    let n = prompt("Enter the length of the grid: ");
+    createWorkSpace(n);
+}
+
 workspace.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains('cell')) {
         event.target.classList.add('cell-dark')
     }
 });
+
+resetButton.addEventListener("click", newGrid);
 
 createWorkSpace(16)
