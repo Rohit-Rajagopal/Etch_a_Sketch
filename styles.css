@@ -14,9 +14,5 @@
 
 .cell {
     flex: auto;
-}
-
-.cell-dark { 
-    flex: auto;
-    background-color: black;
+    opacity: 0;
 }

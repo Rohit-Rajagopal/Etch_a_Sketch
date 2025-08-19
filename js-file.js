@@ -22,7 +22,10 @@ function newGrid() {
 
 workspace.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains('cell')) {
-        event.target.classList.add('cell-dark')
+        opacity = parseFloat(event.target.style.opacity) || 0;
+        event.target.style.opacity = opacity + 0.1;
+        event.target.style.backgroundColor = "black";
+        // event.target.style.backgroundColor = `rgb(${Math.random() * 256}, ${Math.random() * 256}, ${Math.random() * 256})`;
     }
 });
 
